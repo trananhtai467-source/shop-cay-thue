@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -15,42 +15,36 @@
 
     <nav class="p-4 bg-slate-800 shadow-xl sticky top-0 z-50 border-b border-yellow-500/20">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-yellow-400 uppercase tracking-tighter">KIET<span class="text-white">ROBLOX</span></h1>
-            
+            <h1 class="text-2xl font-bold text-yellow-400 uppercase tracking-tighter cursor-pointer" onclick="location.reload()">KIET<span class="text-white">ROBLOX</span></h1>
             <div id="nav-auth-buttons" class="flex items-center space-x-4">
-                <button onclick="toggleModal('login-modal')" class="border border-yellow-500 text-yellow-500 px-4 py-1.5 rounded-lg font-bold hover:bg-yellow-500 hover:text-black transition">Đăng Nhập</button>
-                <button onclick="toggleModal('register-modal')" class="bg-yellow-500 text-black px-4 py-1.5 rounded-lg font-bold hover:bg-yellow-400 transition">Đăng Ký</button>
+                <button onclick="toggleModal('login-modal')" class="border border-yellow-500 text-yellow-500 px-4 py-1.5 rounded-lg font-bold hover:bg-yellow-500 hover:text-black transition text-sm">Đăng Nhập</button>
+                <button onclick="toggleModal('register-modal')" class="bg-yellow-500 text-black px-4 py-1.5 rounded-lg font-bold hover:bg-yellow-400 transition text-sm">Đăng Ký</button>
             </div>
         </div>
     </nav>
 
-    <header class="py-20 px-4 text-center bg-slate-900">
-        <h2 class="text-5xl md:text-6xl font-black mb-4 italic tracking-tight uppercase">CÀY THUÊ <span class="text-yellow-500">SIÊU TỐC</span></h2>
-        <p class="text-gray-400 max-w-xl mx-auto text-lg">Hệ thống cày thuê uy tín cho game thủ Roblox. Bảo mật tài khoản 100%.</p>
+    <header class="py-16 px-4 text-center">
+        <h2 class="text-5xl font-black mb-4 italic tracking-tight uppercase">CÀY THUÊ <span class="text-yellow-500 font-extrabold text-6xl">UY TÍN</span></h2>
+        <p class="text-gray-400 max-w-xl mx-auto">Hệ thống cày thuê thủ công, không sử dụng tool lậu. Đảm bảo an toàn 100%.</p>
     </header>
 
-    <section class="container mx-auto px-4 py-12">
-        <div class="flex items-center mb-10">
-            <div class="h-8 w-2 bg-yellow-500 mr-4 rounded-full"></div>
-            <h3 class="text-3xl font-black uppercase tracking-widest">Dịch Vụ Cày Thuê</h3>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div class="bg-slate-800 border border-slate-700 rounded-3xl overflow-hidden hover:border-yellow-500/50 transition-all shadow-2xl">
-                <img src="https://via.placeholder.com/600x330/1e293b/fbbf24?text=CAY+LEVEL+MAX" class="w-full h-48 object-cover">
+                <img src="https://via.placeholder.com/600x330/1e293b/fbbf24?text=CAY+LEVEL+BLOX+FRUIT" class="w-full h-48 object-cover">
                 <div class="p-6 text-center">
-                    <h4 class="text-xl font-bold mb-4">CÀY LEVEL MAX BLOX FRUIT</h4>
+                    <h4 class="text-xl font-bold mb-4 uppercase">Cày Level Max</h4>
                     <span class="text-yellow-400 font-black text-2xl">20,000đ</span>
-                    <button class="w-full mt-4 bg-white text-black hover:bg-yellow-500 py-3 rounded-xl font-black transition">ĐẶT HÀNG</button>
+                    <button onclick="openOrderModal('Cày Level Max')" class="w-full mt-4 bg-white text-black hover:bg-yellow-500 py-3 rounded-xl font-black transition uppercase">Đặt Hàng Ngay</button>
                 </div>
             </div>
 
             <div class="bg-slate-800 border border-slate-700 rounded-3xl overflow-hidden hover:border-yellow-500/50 transition-all shadow-2xl">
-                <img src="https://via.placeholder.com/600x330/1e293b/fbbf24?text=LAY+VAT+PHAM" class="w-full h-48 object-cover">
+                <img src="https://via.placeholder.com/600x330/1e293b/fbbf24?text=SAN+VAT+PHAM+HIEM" class="w-full h-48 object-cover">
                 <div class="p-6 text-center">
-                    <h4 class="text-xl font-bold mb-4">LẤY VẬT PHẨM HIẾM</h4>
+                    <h4 class="text-xl font-bold mb-4 uppercase">Lấy Vật Phẩm Hiếm</h4>
                     <span class="text-yellow-400 font-black text-2xl">50,000đ</span>
-                    <button class="w-full mt-4 bg-white text-black hover:bg-yellow-500 py-3 rounded-xl font-black transition">ĐẶT HÀNG</button>
+                    <button onclick="openOrderModal('Lấy Vật Phẩm Hiếm')" class="w-full mt-4 bg-white text-black hover:bg-yellow-500 py-3 rounded-xl font-black transition uppercase">Đặt Hàng Ngay</button>
                 </div>
             </div>
         </div>
@@ -58,38 +52,58 @@
 
     <div id="login-modal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-[100]">
         <div class="absolute w-full h-full bg-black opacity-80" onclick="toggleModal('login-modal')"></div>
-        <div class="bg-slate-800 w-11/12 md:max-w-md mx-auto rounded-3xl shadow-2xl z-50 p-8 border border-slate-700">
-            <h2 class="text-2xl font-black text-yellow-400 mb-6 uppercase">Đăng Nhập</h2>
+        <div class="bg-slate-800 w-11/12 md:max-w-md mx-auto rounded-3xl p-8 border border-slate-700 z-[101]">
+            <h2 class="text-2xl font-black text-yellow-400 mb-6 uppercase italic text-center">Đăng Nhập</h2>
             <form onsubmit="handleLogin(event)">
                 <input id="login-email" type="text" placeholder="Tên tài khoản..." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 mb-4 outline-none focus:border-yellow-500" required>
                 <input id="login-pass" type="password" placeholder="Mật khẩu..." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 mb-6 outline-none focus:border-yellow-500" required>
-                <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-400 text-black font-black py-3 rounded-xl uppercase">Vào Shop ngay</button>
+                <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-400 text-black font-black py-3 rounded-xl uppercase transition shadow-lg shadow-yellow-500/20">Vào Shop</button>
             </form>
         </div>
     </div>
 
     <div id="register-modal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-[100]">
         <div class="absolute w-full h-full bg-black opacity-80" onclick="toggleModal('register-modal')"></div>
-        <div class="bg-slate-800 w-11/12 md:max-w-md mx-auto rounded-3xl shadow-2xl z-50 p-8 border border-slate-700">
-            <h2 class="text-2xl font-black text-yellow-400 mb-6 uppercase">Tạo Tài Khoản</h2>
+        <div class="bg-slate-800 w-11/12 md:max-w-md mx-auto rounded-3xl p-8 border border-slate-700 z-[101]">
+            <h2 class="text-2xl font-black text-white mb-6 uppercase italic text-center text-yellow-400">Tạo Tài Khoản</h2>
             <form onsubmit="handleRegister(event)">
                 <input id="reg-email" type="text" placeholder="Nhập tên tài khoản..." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 mb-4 outline-none focus:border-yellow-500" required>
                 <input id="reg-pass" type="password" placeholder="Mật khẩu (ít nhất 6 ký tự)..." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 mb-6 outline-none focus:border-yellow-500" required>
-                <button type="submit" class="w-full bg-white hover:bg-yellow-500 text-black font-black py-3 rounded-xl uppercase">Đăng ký thành viên</button>
+                <button type="submit" class="w-full bg-white hover:bg-yellow-500 text-black font-black py-3 rounded-xl uppercase transition">Đăng ký thành viên</button>
             </form>
         </div>
     </div>
 
-    <footer class="bg-black py-12 mt-20 text-center">
-        <p class="text-yellow-500 font-bold uppercase">KIETROBLOX</p>
+    <div id="order-modal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-[110]">
+        <div class="absolute w-full h-full bg-black opacity-90" onclick="toggleModal('order-modal')"></div>
+        <div class="bg-slate-800 w-11/12 md:max-w-md mx-auto rounded-3xl p-8 border-2 border-yellow-500 z-[111]">
+            <h2 id="order-title" class="text-xl font-black text-yellow-400 mb-2 uppercase italic">XÁC NHẬN ĐẶT HÀNG</h2>
+            <p class="text-xs text-gray-400 mb-6 italic">*Vui lòng nhập chính xác thông tin để shop vào acc cày.</p>
+            <form onsubmit="handleOrder(event)">
+                <input id="order-service" type="hidden">
+                <div class="mb-4">
+                    <label class="text-xs font-bold text-gray-500 ml-2">USER ROBLOX</label>
+                    <input id="order-acc" type="text" placeholder="Username hoặc Email Roblox..." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 outline-none focus:border-yellow-500" required>
+                </div>
+                <div class="mb-6">
+                    <label class="text-xs font-bold text-gray-500 ml-2">PASS ROBLOX</label>
+                    <input id="order-pass" type="password" placeholder="Mật khẩu tài khoản..." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 outline-none focus:border-yellow-500" required>
+                </div>
+                <button type="submit" class="w-full bg-red-600 hover:bg-red-500 text-white font-black py-4 rounded-xl uppercase shadow-xl shadow-red-600/20 transition">Xác Nhận Thanh Toán</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="bg-black py-12 mt-20 text-center border-t border-slate-800">
+        <p class="text-yellow-500 font-bold uppercase tracking-widest">KIETROBLOX</p>
         <p class="text-gray-600 text-[10px] mt-2 italic tracking-widest">&copy; 2026 KIETROBLOX - All Rights Reserved.</p>
     </footer>
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-        // CẤU HÌNH FIREBASE CỦA BẠN
         const firebaseConfig = {
             apiKey: "AIzaSyD0xb0EU0CGfa2mC-b7RwNji3qSdX8PUg4",
             authDomain: "kietroblox-auth.firebaseapp.com",
@@ -102,62 +116,88 @@
 
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
+        const db = getFirestore(app);
 
-        // Hàm Đóng/Mở Modal
-        window.toggleModal = (modalId) => {
-            const modal = document.getElementById(modalId);
-            modal.classList.toggle('opacity-0');
-            modal.classList.toggle('pointer-events-none');
+        let currentUser = null;
+
+        // Quản lý Modal
+        window.toggleModal = (id) => {
+            const m = document.getElementById(id);
+            m.classList.toggle('opacity-0');
+            m.classList.toggle('pointer-events-none');
             document.body.classList.toggle('modal-active');
         };
 
-        // Xử lý Đăng Ký
+        window.openOrderModal = (serviceName) => {
+            if (!currentUser) {
+                alert("Bạn cần đăng nhập để đặt hàng!");
+                toggleModal('login-modal');
+                return;
+            }
+            document.getElementById('order-title').innerText = "ĐẶT: " + serviceName;
+            document.getElementById('order-service').value = serviceName;
+            toggleModal('order-modal');
+        };
+
+        // Auth Logic
         window.handleRegister = async (e) => {
             e.preventDefault();
-            const username = document.getElementById('reg-email').value;
-            const pass = document.getElementById('reg-pass').value;
-            const email = username.includes('@') ? username : username + "@kietroblox.com";
-            
+            const u = document.getElementById('reg-email').value;
+            const p = document.getElementById('reg-pass').value;
+            const email = u.includes('@') ? u : u + "@kietroblox.com";
             try {
-                await createUserWithEmailAndPassword(auth, email, pass);
-                alert("Chào mừng thành viên mới: " + username);
-                toggleModal('register-modal');
-            } catch (error) {
-                alert("Lỗi: " + error.message);
-            }
+                await createUserWithEmailAndPassword(auth, email, p);
+                alert("Đăng ký thành công!");
+                location.reload();
+            } catch (err) { alert("Lỗi: " + err.message); }
         };
 
-        // Xử lý Đăng Nhập
         window.handleLogin = async (e) => {
             e.preventDefault();
-            const username = document.getElementById('login-email').value;
-            const pass = document.getElementById('login-pass').value;
-            const email = username.includes('@') ? username : username + "@kietroblox.com";
-            
+            const u = document.getElementById('login-email').value;
+            const p = document.getElementById('login-pass').value;
+            const email = u.includes('@') ? u : u + "@kietroblox.com";
             try {
-                await signInWithEmailAndPassword(auth, email, pass);
+                await signInWithEmailAndPassword(auth, email, p);
                 alert("Đăng nhập thành công!");
-                toggleModal('login-modal');
-            } catch (error) {
-                alert("Sai tài khoản hoặc mật khẩu!");
+                location.reload();
+            } catch (err) { alert("Sai tài khoản hoặc mật khẩu!"); }
+        };
+
+        window.handleLogout = () => signOut(auth).then(() => location.reload());
+
+        // LOGIC ĐẶT HÀNG
+        window.handleOrder = async (e) => {
+            e.preventDefault();
+            const service = document.getElementById('order-service').value;
+            const acc = document.getElementById('order-acc').value;
+            const pass = document.getElementById('order-pass').value;
+
+            try {
+                await addDoc(collection(db, "orders"), {
+                    customerEmail: currentUser.email,
+                    service: service,
+                    robloxAcc: acc,
+                    robloxPass: pass,
+                    status: "Đang chờ",
+                    time: serverTimestamp()
+                });
+                alert("Đặt hàng thành công! Shop sẽ sớm liên hệ cày cho bạn.");
+                toggleModal('order-modal');
+            } catch (err) {
+                alert("Lỗi khi đặt hàng: " + err.message);
             }
         };
 
-        // Đăng Xuất
-        window.handleLogout = () => {
-            signOut(auth).then(() => location.reload());
-        };
-
-        // Theo dõi trạng thái
         onAuthStateChanged(auth, (user) => {
-            const authArea = document.getElementById('nav-auth-buttons');
+            currentUser = user;
+            const area = document.getElementById('nav-auth-buttons');
             if (user) {
                 const name = user.email.split('@')[0];
-                authArea.innerHTML = `
-                    <div class="flex flex-col items-end">
-                        <span class="text-yellow-400 font-bold text-sm">Chào, ${name}</span>
-                        <button onclick="handleLogout()" class="text-[10px] text-gray-500 uppercase hover:text-white underline">Thoát</button>
-                    </div>`;
+                area.innerHTML = `<div class="text-right">
+                    <p class="text-yellow-400 font-bold text-sm">Chào, ${name}</p>
+                    <button onclick="handleLogout()" class="text-[10px] underline text-gray-500">Thoát</button>
+                </div>`;
             }
         });
     </script>
